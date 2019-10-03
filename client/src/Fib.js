@@ -25,15 +25,13 @@ class Fib extends Component {
     });
   }
 
-  handleSubmit = async (event, reloadData) => {
+  handleSubmit = async event => {
     event.preventDefault();
 
     await axios.post('/api/values', {
       index: this.state.index
     });
     this.setState({ index: '' });
-    this.fetchIndexes();
-    this.fetchValues();
   };
 
   renderSeenIndexes() {
@@ -67,10 +65,10 @@ class Fib extends Component {
         </form>
 
         <h3>Indexes I have seen:</h3>
-        {this.renderSeenIndexes()}
+        {/*this.renderSeenIndexes()*/}
 
         <h3>Calculated Values:</h3>
-        {this.renderValues()}
+        {/*this.renderValues()*/}
       </div>
     );
   }
